@@ -7,5 +7,5 @@ output "endpoint" {
 # }
 
 output "ecr-repository" {
-  value = aws_ecr_repository.ecr-repository.name
+  value = aws_ecr_repository.ecr-repository.repository_url
 }
