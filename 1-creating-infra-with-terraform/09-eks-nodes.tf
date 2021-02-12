@@ -8,9 +8,9 @@ resource "aws_eks_node_group" "eks-cluster-nodes" {
   capacity_type   = "SPOT"
 
   scaling_config {
-    desired_size = var.env == "prod" ? 5 : 3
-    max_size     = var.env == "prod" ? 7 : 5
-    min_size     = var.env == "prod" ? 5 : 3
+    desired_size = var.env == "prod" ? 5 : 2
+    max_size     = var.env == "prod" ? 7 : 3
+    min_size     = var.env == "prod" ? 5 : 1
   }
 
   depends_on = [

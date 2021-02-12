@@ -1,0 +1,18 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: "almanza-ingress"
+  #namespace: production
+spec:
+  rules:
+    - host: hireme.almatronics.es
+      http:
+        paths:
+          - path: /container1
+            backend:
+              serviceName: almanza-service-cn1
+              servicePort: 80
+          - path: /container2
+            backend:
+              serviceName: almanza-service-cn2
+              servicePort: 80

@@ -9,6 +9,10 @@ CORS(app)
 def get_ui():
     return send_from_directory('ui', 'almanzacn1.html')
 
+@app.route('/container1',methods=['GET'])
+def get_ui_container():
+    return send_from_directory('ui', 'almanzacn1.html')
+
 if __name__ == '__main__':
     from argparse import ArgumentParser
     parser = ArgumentParser()
