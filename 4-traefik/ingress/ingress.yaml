@@ -8,6 +8,10 @@ spec:
     - host: hireme.almatronics.es
       http:
         paths:
+          - path: /
+            backend:
+              serviceName: almanza-service-cn1
+              servicePort: 80
           - path: /container1
             backend:
               serviceName: almanza-service-cn1
