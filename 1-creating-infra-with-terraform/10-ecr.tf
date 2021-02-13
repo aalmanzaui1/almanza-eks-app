@@ -121,19 +121,19 @@ locals {
 }
 
 resource "local_file" "container1_deployment" {
-  filename = "../tmp/k8s/${timestamp()}/container1_deployment.yml"
+  filename = "../3-app/container1_deployment.yml"
   content  = local.container1_deploy
   depends_on = [aws_eks_cluster.eks-cluster,aws_ecr_repository.ecr-repository]
 }
 
 resource "local_file" "container2_deployment" {
-  filename = "../tmp/k8s/${timestamp()}/container2_deployment.yml"
+  filename = "../3-app/container2_deployment.yml"
   content  = local.container2_deploy
   depends_on = [aws_eks_cluster.eks-cluster,aws_ecr_repository.ecr-repository]
 }
 
 resource "local_file" "services-k8s" {
-  filename = "../tmp/k8s/${timestamp()}/services.yml"
+  filename = "../3-app/services.yml"
   content  = local.services
   depends_on = [aws_eks_cluster.eks-cluster,aws_ecr_repository.ecr-repository]
 }
